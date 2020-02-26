@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by  Jesse Howe</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>College Going</h1>
+  <span>Select to Jump to District</span>
+
+<div class="college-selection">
+  <a onclick="jumpto('oklahomaCity');">Oklahoma City</a>
+  <a onclick="jumpto('tulsa');">Tulsa</a>
+  <a onclick="jumpto('edmond');">Edmond</a>
+  <a onclick="jumpto('moore');">Moore</a>
+  <a onclick="jumpto('putnamCity');">Putnam City</a>
+  <a onclick="jumpto('brokenArrow');">Broken Arrow</a>
+  <a onclick="jumpto('union');">Union</a>
+  <a onclick="jumpto('norman');">Norman</a>
+  <a onclick="jumpto('lawton');">Lawton</a>
+  <a onclick="jumpto('midDelDistrict');">Mid-Del District</a>
+  <a onclick="jumpto('epic');">Epic</a>
+  <a onclick="jumpto('homeschool');">Homeschool</a>
+
+</div>
+
+<div id="oklahomaCity" class="district">
+  <h3>Oklahoma City</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('oklahomaCity');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('oklahomaCity');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('oklahomaCity');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('oklahomaCity');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="research">73</td>
+            <td class="fourYear">75</td>
+            <td class="twoYear">409</td>
+            <td class="total">557</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="tulsa" class="district">
+  <h3>Tulsa</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('tulsa');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('tulsa');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('tulsa');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('tulsa');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>All Schools</td>
+            <td>171</td>
+            <td>80</td>
+            <td>549</td>
+            <td>800</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="edmond" class="district">
+  <h3>Edmond</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('edmond');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('edmond');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('edmond');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('edmond');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>All Schools</td>
+            <td>524</td>
+            <td>585</td>
+            <td>197</td>
+            <td>1306</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="moore" class="district">
+  <h3>Moore</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('moore');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('moore');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('moore');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('moore');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>All Schools</td>
+            <td>210</td>
+            <td>141</td>
+            <td>438</td>
+            <td>789</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="putnamCity" class="district">
+  <h3>Putnam City</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('putnamCity');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('putnamCity');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('putnamCity');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('putnamCity');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>All Schools</td>
+            <td>100</td>
+            <td>177</td>
+            <td>204</td>
+            <td>481</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="brokenArrow" class="district">
+  <h3>Broken Arrow</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('brokenArrow');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('brokenArrow');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('brokenArrow');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('brokenArrow');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>All Schools</td>
+            <td>119</td>
+            <td>49</td>
+            <td>355</td>
+            <td>523</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="union" class="district">
+  <h3>Union</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('union');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('union');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('union');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('union');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>All Schools</td>
+            <td>151</td>
+            <td>32</td>
+            <td>388</td>
+            <td>571</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="norman" class="district">
+  <h3>Norman</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('norman');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('norman');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('norman');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('norman');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>All Schools</td>
+            <td>279</td>
+            <td>54</td>
+            <td>214</td>
+            <td>547</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="lawton" class="district">
+  <h3>Lawton</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('lawton');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('lawton');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('lawton');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('lawton');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>All Schools</td>
+            <td>53</td>
+            <td>46</td>
+            <td>38</td>
+            <td>137</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="midDelDistrict" class="district">
+  <h3>Mid-Del District</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('midDelDistrict');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('midDelDistrict');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('midDelDistrict');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('midDelDistrict');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>All Schools</td>
+            <td>44</td>
+            <td>77</td>
+            <td>686</td>
+            <td>807</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="epic" class="district">
+  <h3>Epic</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('epic');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('epic');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('epic');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('epic');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>All Schools</td>
+            <td>34</td>
+            <td>81</td>
+            <td class="twoYear">255</td>
+            <td class="total">370</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="homeschool" class="district">
+  <h3>Homeschool</h3>
+  <div class="filterContainer">
+    <button class="totalSelector active" onclick="filterTotal('homeschool');">Total</button>
+    <button class="researchSelector" onclick="filterResearch('homeschool');">Research</button>
+    <button class="fourYearSelector" onclick="filterFourYear('homeschool');">4-Year</button>
+    <button class="twoYearSelector" onclick="filterTwoYear('homeschool');">2-Year</button>
+  </div>
+  <div class="content">
+    <svg class="container" viewBox="0 0 600 600" preserveAspectRatio="xMinYMin slice" width="100%" height="100%" style="width: 100%; overflow: visible;"><svg width="600" height="600"></svg></svg>
+    <div class="legendContainer">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>District</th>
+            <th>Research</th>
+            <th>4-Year</th>
+            <th>2-Year</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>All Schools</td>
+            <td>74</td>
+            <td>100</td>
+            <td>238</td>
+            <td>412</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://raw.githubusercontent.com/jbkunst/d3-waffle/master/d3-waffle.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js'></script><script  src="./script.js"></script>
+<script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/projects.oklahomawatch.org/external-libraries/js/pym.v1.min.js"></script>
+  
+<script type="text/javascript">
+        var pymChild = new pym.Child({
+            polling: 1200
+        });
+    </script>
+</body>
+</html>
