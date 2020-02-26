@@ -1,0 +1,100 @@
+body{
+  max-width: 840px;
+  margin: 0 auto;
+}
+.container {
+  display:block;
+  margin-top: 15px;
+}
+.container{
+}
+.district{
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 1rem;
+  height: 370px;
+  border-bottom: 1px solid #efefef;
+}
+.content{
+    display: grid;
+  grid-template-columns: auto 50%;
+}
+button{
+  border: 1px solid #efefef;
+  background: #fff;
+}
+button:active{
+  background: lightcoral;
+}
+.legendContainer rect{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+table{
+  box-sizing: border-box;
+    width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+ font-size: 0.75rem;
+    border-collapse: collapse;
+  text-align: left;
+}
+thead tr{
+  border-bottom: 1px solid #000;
+}
+tbody tr{
+  border-bottom: 1px solid #efefef;
+
+}
+td {
+  text-align: center
+}
+
+table .active{
+  background: lightcoral;
+  color: #fff; 
+}
+tbody tr:hover{
+  background: #efefef;
+}
+
+@media(max-width: 750px){
+  .content{
+  display: block;
+
+}
+  .container{
+
+}
+.district{
+  height: auto;
+}
+}
+
+.college-selection a{
+  border: 1px solid #efefef;
+  display: block;
+  margin: 0.25rem;
+  padding: 0.5rem;
+}
+.college-selection{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.waffle-tooltip{
+  padding: 0.5rem;
+   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.active{
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  border: 0;
+}
