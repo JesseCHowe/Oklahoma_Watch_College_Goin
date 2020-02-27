@@ -9,25 +9,6 @@
 <body>
 <!-- partial:index.partial.html -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<h1>College Going</h1>
-  <span>Select to Jump to District</span>
-
-<div class="college-selection">
-  <a onclick="jumpto('oklahomaCity');">Oklahoma City</a>
-  <a onclick="jumpto('tulsa');">Tulsa</a>
-  <a onclick="jumpto('edmond');">Edmond</a>
-  <a onclick="jumpto('moore');">Moore</a>
-  <a onclick="jumpto('putnamCity');">Putnam City</a>
-  <a onclick="jumpto('brokenArrow');">Broken Arrow</a>
-  <a onclick="jumpto('union');">Union</a>
-  <a onclick="jumpto('norman');">Norman</a>
-  <a onclick="jumpto('lawton');">Lawton</a>
-  <a onclick="jumpto('midDelDistrict');">Mid-Del District</a>
-  <a onclick="jumpto('epic');">Epic</a>
-  <a onclick="jumpto('homeschool');">Homeschool</a>
-
-</div>
-
 <div id="oklahomaCity" class="district">
   <h3>Oklahoma City</h3>
   <div class="filterContainer">
@@ -43,7 +24,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -80,7 +61,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -92,10 +73,10 @@
           <tr>
             <td></td>
             <td>All Schools</td>
-            <td>171</td>
-            <td>80</td>
-            <td>549</td>
-            <td>800</td>
+            <td class="research">171</td>
+            <td class="fourYear">80</td>
+            <td class="twoYear">549</td>
+            <td class="total">800</td>
           </tr>
         </tfoot>
       </table>
@@ -117,7 +98,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -129,10 +110,10 @@
           <tr>
             <td></td>
             <td>All Schools</td>
-            <td>524</td>
-            <td>585</td>
-            <td>197</td>
-            <td>1306</td>
+            <td class="research">524</td>
+            <td class="fourYear">585</td>
+            <td class="twoYear">197</td>
+            <td class="total">1306</td>
           </tr>
         </tfoot>
       </table>
@@ -154,7 +135,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -166,10 +147,10 @@
           <tr>
             <td></td>
             <td>All Schools</td>
-            <td>210</td>
-            <td>141</td>
-            <td>438</td>
-            <td>789</td>
+            <td class="research">210</td>
+            <td class="fourYear">141</td>
+            <td class="twoYear">438</td>
+            <td class="total">789</td>
           </tr>
         </tfoot>
       </table>
@@ -191,7 +172,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -203,10 +184,10 @@
           <tr>
             <td></td>
             <td>All Schools</td>
-            <td>100</td>
-            <td>177</td>
-            <td>204</td>
-            <td>481</td>
+            <td class="research">100</td>
+            <td class="fourYear">177</td>
+            <td class="twoYear">204</td>
+            <td class="total">481</td>
           </tr>
         </tfoot>
       </table>
@@ -228,7 +209,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -240,10 +221,10 @@
           <tr>
             <td></td>
             <td>All Schools</td>
-            <td>119</td>
-            <td>49</td>
-            <td>355</td>
-            <td>523</td>
+            <td class="research">119</td>
+            <td class="fourYear">49</td>
+            <td class="twoYear">355</td>
+            <td class="total">523</td>
           </tr>
         </tfoot>
       </table>
@@ -265,7 +246,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -277,10 +258,10 @@
           <tr>
             <td></td>
             <td>All Schools</td>
-            <td>151</td>
-            <td>32</td>
-            <td>388</td>
-            <td>571</td>
+            <td class="research">151</td>
+            <td class="fourYear">32</td>
+            <td class="twoYear">388</td>
+            <td class="total">571</td>
           </tr>
         </tfoot>
       </table>
@@ -302,7 +283,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -314,10 +295,10 @@
           <tr>
             <td></td>
             <td>All Schools</td>
-            <td>279</td>
-            <td>54</td>
-            <td>214</td>
-            <td>547</td>
+            <td class="research">279</td>
+            <td class="fourYear">54</td>
+            <td class="twoYear">214</td>
+            <td class="total">547</td>
           </tr>
         </tfoot>
       </table>
@@ -339,7 +320,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -351,10 +332,10 @@
           <tr>
             <td></td>
             <td>All Schools</td>
-            <td>53</td>
-            <td>46</td>
-            <td>38</td>
-            <td>137</td>
+            <td class="research">53</td>
+            <td class="fourYear">46</td>
+            <td class="twoYear">38</td>
+            <td class="total">137</td>
           </tr>
         </tfoot>
       </table>
@@ -376,7 +357,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -388,10 +369,10 @@
           <tr>
             <td></td>
             <td>All Schools</td>
-            <td>44</td>
-            <td>77</td>
-            <td>686</td>
-            <td>807</td>
+            <td class="research">44</td>
+            <td class="fourYear">77</td>
+            <td class="twoYear">686</td>
+            <td class="total">807</td>
           </tr>
         </tfoot>
       </table>
@@ -413,7 +394,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -425,8 +406,8 @@
           <tr>
             <td></td>
             <td>All Schools</td>
-            <td>34</td>
-            <td>81</td>
+            <td class="research">34</td>
+            <td class="fourYear">81</td>
             <td class="twoYear">255</td>
             <td class="total">370</td>
           </tr>
@@ -450,7 +431,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>District</th>
+            <th>High School</th>
             <th>Research</th>
             <th>4-Year</th>
             <th>2-Year</th>
@@ -462,10 +443,10 @@
           <tr>
             <td></td>
             <td>All Schools</td>
-            <td>74</td>
-            <td>100</td>
-            <td>238</td>
-            <td>412</td>
+            <td class="research">74</td>
+            <td class="fourYear">100</td>
+            <td class="twoYear">238</td>
+            <td class="total">412</td>
           </tr>
         </tfoot>
       </table>
