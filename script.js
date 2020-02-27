@@ -252,13 +252,7 @@ function d3waffle(type) {
     rows = _;
     return chart;
   };
-
-  // chart.icon = function(_) {
-  //   if (!arguments.length) return icon;
-  //   icon = _;
-  //   return chart;
-  // };
-
+  
   chart.scale = function(_) {
     if (!arguments.length) return scale;
     scale = _;
@@ -669,90 +663,115 @@ var data = {
   ]
 };
 
-var domain = data['tulsa'].map(function(d) {
-  return slugify(d.name);
+var domain = (district) => data[district].sort((a,b) => b.value - a.value).map(function(d) {
+  return slugify(d.value);
 });
 
-var range = ["#36c7d0", "#4db4d5", "#5da7d9","#6f98dd","#7e8ce0","#898ed9","#9891d0","#c499b4","#d39cab","#e09ea2","#f0a198","#f6a294","#ffa48e"];
-var palette = d3.scale
-  .ordinal()
-  .domain(domain)
-  .range(range);
-
-var chart4 = d3waffle('value').rows(23)
-.colorscale(palette);
-
 var chart = d3waffle();
- var range = ["#36c7d0", "#4db4d5", "#5da7d9","#6f98dd","#7e8ce0","#898ed9","#9891d0","#c499b4","#d39cab","#e09ea2","#f0a198","#f6a294","#ffa48e"];
 
-var range2 = ["#393b79",
-              "#5254a3",
-              "#6b6ecf",
-              "#9c9ede",   
-              "#637939",
-              "#8ca252",
+const colorArr = {
+  oklahomaCity: ["#693d40",
+                "#7f3d58",
+                "#9b3c77",
+                "#a73c6b",
+                "#b53b5d",
+                "#cd3a46",
+                "#d85f75",
+                "#e997bd",
+                "#efabc7",
+                "#f7c6d5",
+                "#ffe0e3"],
+  tulsa: ["#272842",
+         "#434e69",
+         "#506880",
+         "#64628a",
+         "#8d81ac",
+         "#9f8fc9",
+         "#5597a3",
+         "#6ab3ad",
+         "#62d1c5",
+         "#6ad4a4",
+         "#8ce7d2",
+         "#76f0e0",
+         "#7cffff"],
+  edmond: ["#8ca252",
               "#b5cf6b",
-              "#cedb9c",
-              "#8c6d31",
-              "#bd9e39",
-              "#e7ba52",
-              "#e7cb94",
-              "#ad494a",
-              "#d6616b",
-               "#e7969c",
-               "#7b4173",
-               "#a55194",
-               "#ce6dbd",
-               "#de9ed6"];
-var palette2 = d3.scale
-  .ordinal()
-  .domain(domain)
-  .range(range2);
+              "#cedb9c"],
+  moore: ["#a55194",
+         "#ce6dbd",
+         "#de9ed6"],
+  putnamCity: [
+               "brown",
+              "Chocolate",
+              "coral",
+  "lightcoral"],
+  brokenArrow: ["lightblue"],
+  union: ["Thistle"],
+  norman: ["DarkSlateBlue",
+           "CornflowerBlue",
+          "DarkOrchid"
+          ],
+  lawton: ["#bd9e39",
+          "#e7ba52",
+          "#e7cb94"],
+  midDelDistrict: ["LightSlateGrey",
+                  "LightSeaGreen",
+                  "LightGreen"],
+  epic: ["sandybrown "],
+  homeschool: ["MediumAquaMarine"]
+};
 
-var chart5 = d3waffle('value').rows(43).colorscale(palette2);
-//.colorscale(palette2);
+const paletteTest = (district) => {
+  return d3.scale
+  .ordinal()
+  .domain(domain(district))
+  .range(colorArr[district]);
+}
+
+const chartTest = (district) =>  d3waffle('value').rows(43).colorscale(paletteTest(district));
+
 
 Object.keys(data).map(district => {   
   return d3.select("#"+district+" svg svg")
   .datum(data[district])
-  .call(chart5);
+  .call(chartTest(district));
 }) 
 
 function jumpto(anchor){
     window.location.href = "#"+anchor;
 }
 
-const fourYear = d3waffle('fourYear').rows(43).colorscale(palette2);
-const twoYear = d3waffle('twoYear').rows(43).colorscale(palette2);
-const research = d3waffle('research').rows(43).colorscale(palette2);
-const total = d3waffle('value').rows(43).colorscale(palette2);
+const fourYear = (district) => { return d3waffle('fourYear').rows(43).colorscale(paletteTest(district)); }
+const twoYear = (district) => d3waffle('twoYear').rows(43).colorscale(paletteTest(district));
+const research = (district) => d3waffle('research').rows(43).colorscale(paletteTest(district));
+const total = (district) => d3waffle('value').rows(43).colorscale(paletteTest(district));
 
 function filterTotal(district){
   selectFilter(district, ".totalSelector", "total");
   d3.select("#"+district+" svg svg")
     .datum(data[district])
-    .call(total);
+    .call(total(district));
 }
 
 function filterResearch(district){
   selectFilter(district, ".researchSelector", "research");
   d3.select("#"+district+" svg svg")
     .datum(data[district])
-    .call(research);
+    .call(research(district));
 }
 
 function filterFourYear(district){
   selectFilter(district, ".fourYearSelector", "fourYear");
   d3.select("#"+district+" svg svg")
     .datum(data[district])
-    .call(fourYear);
+    .call(fourYear(district));
 }
 
 function filterTwoYear(district){
   selectFilter(district, ".twoYearSelector", "twoYear");
   d3.select("#"+district+" svg svg")
   .datum(data[district])
-  .call(twoYear);
+  .call(twoYear(district));
 }
 
 function selectFilter(district,currentSelector, columnSelect) {
@@ -773,3 +792,52 @@ function selectFilter(district,currentSelector, columnSelect) {
 
 const tablecolumns = document.querySelectorAll("table .total")
 tablecolumns.forEach(column => column.classList.add('active'));
+
+
+function myFunction(x) {
+  var okcSVG = document.querySelector('#oklahomaCity svg');
+  var tulsaSvg = document.querySelector('#tulsa svg');
+  var edmondSvg = document.querySelector('#edmond svg');
+  var mooreSvg = document.querySelector('#moore svg');
+  var putnamCitySvg = document.querySelector('#putnamCity svg');
+  var brokenArrowSvg = document.querySelector('#brokenArrow svg');
+  var unionSvg = document.querySelector('#union svg');
+  var normanSvg = document.querySelector('#norman svg');
+  var lawtonSvg = document.querySelector('#lawton svg');
+  var midDelDistrictSvg = document.querySelector('#midDelDistrict svg');
+  var epicSvg = document.querySelector('#epic svg');
+  var homeschoolSvg = document.querySelector('#homeschool svg');
+
+  if (x.matches) {
+    okcSVG.setAttribute("viewBox", "0 0 600 200");
+    tulsaSvg.setAttribute("viewBox", "0 0 600 300");
+    edmondSvg.setAttribute("viewBox", "0 0 600 430");
+    mooreSvg.setAttribute("viewBox", "0 0 600 300");
+    putnamCitySvg.setAttribute("viewBox", "0 0 600 200");
+    brokenArrowSvg.setAttribute("viewBox", "0 0 600 200");
+    unionSvg.setAttribute("viewBox", "0 0 600 200");
+    normanSvg.setAttribute("viewBox", "0 0 600 200");
+    lawtonSvg.setAttribute("viewBox", "0 0 600 100");
+    midDelDistrictSvg.setAttribute("viewBox", "0 0 600 300");
+    epicSvg.setAttribute("viewBox", "0 0 600 160");
+    homeschoolSvg.setAttribute("viewBox", "0 0 600 180");
+
+  } else {
+    okcSVG.setAttribute("viewBox", "0 0 600 600");
+    tulsaSvg.setAttribute("viewBox", "0 0 600 600");
+    edmondSvg.setAttribute("viewBox", "0 0 600 600");
+    mooreSvg.setAttribute("viewBox", "0 0 600 600");
+    putnamCitySvg.setAttribute("viewBox", "0 0 600 600");
+    brokenArrowSvg.setAttribute("viewBox", "0 0 600 600");
+    unionSvg.setAttribute("viewBox", "0 0 600 600");
+    normanSvg.setAttribute("viewBox", "0 0 600 600");
+    lawtonSvg.setAttribute("viewBox", "0 0 600 600");
+    midDelDistrictSvg.setAttribute("viewBox", "0 0 600 600");
+    epicSvg.setAttribute("viewBox", "0 0 600 600");
+    homeschoolSvg.setAttribute("viewBox", "0 0 600 600");
+  }
+}
+
+var x = window.matchMedia("(max-width: 750px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
