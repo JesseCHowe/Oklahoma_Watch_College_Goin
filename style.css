@@ -46,18 +46,41 @@ thead tr{
 }
 tbody tr{
   border-bottom: 1px solid #efefef;
-
 }
 td {
   text-align: center
 }
-
+td:nth-child(2) {
+  text-align: left;
+}
 table .active{
-  background: lightcoral;
+  background: #333;
   color: #fff; 
 }
 tbody tr:hover{
   background: #efefef;
+}
+
+#oklahomaCity{
+  height: 340px;
+}
+#edmond{
+  height: 400px;
+}
+#moore{
+  height: 300px;
+}
+#putnamCity,
+#brokenArrow,
+#union,
+#norman,
+#lawton,
+#epic,
+#homeschool{
+  height: 240px; 
+}
+#midDelDistrict{
+  height: 300px;
 }
 
 @media(max-width: 750px){
@@ -65,11 +88,21 @@ tbody tr:hover{
   display: block;
 
 }
-  .container{
-
-}
 .district{
   height: auto;
+}
+#oklahomaCity,
+#edmond,
+#moore,
+#putnamCity,
+#brokenArrow,
+#union,
+#norman,
+#lawton,
+#epic,
+#homeschool,
+#midDelDistrict{
+  height: auto; 
 }
 }
 
@@ -98,3 +131,4 @@ tbody tr:hover{
   font-weight: bold;
   border: 0;
 }
+ 
